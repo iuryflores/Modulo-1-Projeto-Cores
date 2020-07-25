@@ -15,53 +15,45 @@ var rangeBlue = document.querySelector('#rangeBlue');
 var selectedColor = document.querySelector('#selectedColor');
 var project = document.querySelector('#project');
 
-function displayColor(r, g, b) {
-  inputRed.value = r;
-  inputGreen.value = g;
-  inputBlue.value = b;
-
-  selectedColor.textContent = 'RGB(' + r + ',' + g + ',' + b + ')';
-}
-function findColor(r, g, b) {
-  selectColor(r, g, b);
-
-  function selectColor(r, g, b) {
-    return (color = 'rgb(' + r + ',' + g + ',' + b + ')');
-  }
-  selectedColor.style.backgroundColor = color;
-  project.style.color = color;
-
-  red = r;
-  green = g;
-  blue = b;
-}
-
-displayColor(red, green, blue);
-findColor(inputRed.value, inputGreen.value, inputBlue.value);
-
 function start() {
   rangeRed.addEventListener('input', handleRangeValueChangeRed);
   rangeGreen.addEventListener('input', handleRangeValueChangeGreen);
   rangeBlue.addEventListener('input', handleRangeValueChangeBlue);
+
+  selectedColor.style.backgroundColor =
+    'rgb(' + red + ',' + green + ',' + blue + ')';
+  project.style.color = 'rgb(' + red + ',' + green + ',' + blue + ')';
 }
 
 function handleRangeValueChangeRed(event) {
   var redChanged = event.target.value;
   inputRed.value = redChanged;
-  findColor(rangeRed.value, rangeGreen.value, rangeBlue.value);
-  displayColor(red, green, blue);
+  red = redChanged;
+  selectedColor.style.backgroundColor =
+    'rgb(' + redChanged + ',' + green + ',' + blue + ')';
+  selectedColor.textContent =
+    'RGB(' + redChanged + ',' + green + ',' + blue + ')';
+  project.style.color = 'rgb(' + redChanged + ',' + green + ',' + blue + ')';
 }
 function handleRangeValueChangeGreen(event) {
   var greenChanged = event.target.value;
   inputGreen.value = greenChanged;
-  findColor(rangeRed.value, rangeGreen.value, rangeBlue.value);
-  displayColor(red, green, blue);
+  green = greenChanged;
+  selectedColor.style.backgroundColor =
+    'rgb(' + red + ',' + greenChanged + ',' + blue + ')';
+  selectedColor.textContent =
+    'RGB(' + red + ',' + greenChanged + ',' + blue + ')';
+  project.style.color = 'rgb(' + red + ',' + greenChanged + ',' + blue + ')';
 }
 function handleRangeValueChangeBlue(event) {
   var blueChanged = event.target.value;
   inputBlue.value = blueChanged;
-  findColor(rangeRed.value, rangeGreen.value, rangeBlue.value);
-  displayColor(red, green, blue);
+  blue = blueChanged;
+  selectedColor.style.backgroundColor =
+    'rgb(' + red + ',' + green + ',' + blueChanged + ')';
+  selectedColor.textContent =
+    'RGB(' + red + ',' + green + ',' + blueChanged + ')';
+  project.style.color = 'rgb(' + red + ',' + green + ',' + blueChanged + ')';
 }
 
 start();

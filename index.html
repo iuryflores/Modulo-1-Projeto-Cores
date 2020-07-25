@@ -3,37 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>IGTI - Projeto Cores</title>
+    <link rel="stylesheet" href="./style.css" />
+    <title>IGTI - Colors Selector</title>
   </head>
-  <body>
-    <h1>IGTI - Projeto Core - Iury Flores</h1>
-    <div id="projeto">
-      <input
-        id="inputRed"
-        value="0"
-        min="0"
-        max="255"
-        step="1type"
-        ="text"
-      /><input type="range" min="0" max="255" />
-      <input
-        id="inputBlue"
-        value="0"
-        min="0"
-        max="255"
-        step="1"
-        type="text"
-      /><input type="range" min="0" max="255" />
-      <input
-        id="inputGreen"
-        value="0"
-        min="0"
-        max="255"
-        step="1type"
-        ="text"
-      /><input type="range" min="0" max="255" />
+  <body ng-controller="testCtrl">
+    <h1>IGTI - Colors Selector</h1>
+    <h3>FullStack Developer - BootCamp</h3>
+    <h3>Iury Flores</h3>
+    <div id="project">
+      <div class="conteiner">
+        <div class="div">
+          <p>
+            <label>(R) Vermelho</label>
+
+            <input
+              id="inputRed"
+              value="0"
+              min="0"
+              max="255"
+              step="1"
+              ="text"
+              disabled
+            />
+            <input id="rangeRed" type="range" min="0" max="255" value="0" />
+          </p>
+        </div>
+        <div class="div">
+          <p>
+            <label>(G) Verde</label>
+
+            <input
+              id="inputGreen"
+              value="0"
+              min="0"
+              max="255"
+              step="1"
+              type="text"
+              disabled
+            />
+            <input id="rangeGreen" type="range" min="0" max="255" value="0" />
+          </p>
+        </div>
+        <div class="div">
+          <p>
+            <label>(B) Azul</label>
+
+            <input
+              id="inputBlue"
+              value="0"
+              min="0"
+              max="255"
+              step="1"
+              ="text"
+              disabled
+            />
+            <input id="rangeBlue" type="range" min="0" max="255" value="0" />
+          </p>
+        </div>
+      </div>
+      <div class="conteiner1">
+        <div id="selectedColor"><span>RGB(0,0,0)</span></div>
+      </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./meuscript.js"></script>
   </body>
 </html>
